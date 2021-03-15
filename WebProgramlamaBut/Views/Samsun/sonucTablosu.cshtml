@@ -1,0 +1,44 @@
+﻿@using WebProgramlamaBut.Models
+@model List<Anket>
+@{
+    ViewBag.Title = "sonucTablosu";
+}
+
+<h2 style="margin-top:100px;">Kayıtlı Anketler</h2>
+
+<table id="tabloSamsun" class="table table-hover table-bordered table-responsive table-striped">
+    @if (Model.Count > 0)
+    {
+        <thead style="background-color:lavender">
+            <tr>
+                <th>Anket Numarası</th>
+                @for (int i = 1; i <= Model[0].getSorular().Count(); i++)
+                {
+                    <th>  @i. Soru </th>
+                }
+                <th> Sil </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var satir = 1;
+            }
+            @foreach (var anket in Model)
+            {
+                <tr>
+                    <td> @satir </td>
+                    @foreach (var soru in anket.getSorular())
+                    {
+                        <td>@soru.secilenCevap</td>
+                    }
+                    <td> <a href="/Samsun/Sil/@anket.kullanici" class="btn btn-danger"> Sil </a></td>
+                </tr>
+                satir = satir + 1;
+            }
+        </tbody>
+    }
+    else
+    {
+        <tr> <td style="color:royalblue;"> Daha önce kaydedilmiş bir anket bulunamadı. @Html.ActionLink("Anket Sayfası", "Index", "Samsun") linkine tıklayarak anketimize katılabilirsiniz. </td></tr>
+    }
+</table>

@@ -1,0 +1,81 @@
+﻿@using WebProgramlamaBut.Models
+@model List<AnketSoru>
+@{
+    ViewBag.Title = "Index";
+}
+<div style="margin:5%;">
+
+    <form action="/Samsun/Index" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-primary" })
+        <br />
+        <div class="panel panel-success">
+            <div class="panel-heading"> 1. Soru : Samsun'da tekrar görmek istediğiniz yer neresidir? </div>
+            <div class="panel-body">
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Atakum Sahil"> Atakum Sahil </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Sevgi Gölü">Sevgi Gölü</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Batı Park"> Batı Park </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Şahinkaya Kanyonu"> Şahinkaya Kanyonu </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Kapıkaya Festivali"> Kapıkaya Festivali </label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="bir" value="Amisos Mezarları">Amisos Mezarları</label>
+                </div> @Html.ValidationMessage("err1", new { @style = "color:crimson" })<br />
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading"> 2. Soru :  Bildiğiniz Samsunlu sanatçıları işaretleyin. </div>
+            <div class="panel-body">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Orhan Gencebay"> Orhan Gencebay </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Sagopa Kajmer"> Sagopa Kajmer </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Aliye Rona"> Aliye Rona </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Levent Kırca"> Levent Kırca </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Ahu Türkpençe"> Ahu Türkpençe </label>
+                </div>
+                <div class="checkbox">
+                    <label><input type="checkbox" name="iki" value="Mehmet Arslantuğ"> Mehmet Arslantuğ </label>
+                </div>@Html.ValidationMessage("err2", new { @style = "color:orangered" })<br />
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading"> 3. Soru : Şarkıcı mı oyuncu mu : </div>
+            <div class="col-md-12 input-group panel-body" style="padding:20px;">
+                <div class="col-md-6 input-group" style="float:left; margin-left:auto">
+                    <label> A - Şarkıcı </label> <br />
+                    <label> B - Oyuncu </label> <br />
+                    <label> C - Hem oyuncu hem şarkıcı</label>
+                </div>
+                <div class="col-md-6 input-group">
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Orhan Gencebay </label><br />
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Sagopa Kajmer </label><br />
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Aliye Rona </label><br />
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Levent Kırca </label><br />
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Ahu Türkpençe </label><br />
+                    <label><input type="text" name="uc" maxlength="1" style="max-width:35px;" value="" placeholder="_ _ _"> Mehmet Arslantuğ </label><br />
+                </div>
+            </div> 
+         </div> @Html.ValidationMessage("err3", new { @style = "color:red" })<br />
+
+            <div class="text-center"><button type="submit" class="btn btn-success btn-lg"> Gönder </button></div>
+
+    </form>
+</div>
