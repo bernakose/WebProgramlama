@@ -14,6 +14,7 @@ namespace WebProgramlamaBut.Controllers
         public ActionResult Index()
         {
             return View();
+
         }
         [HttpPost]
         public ActionResult Index(string bir, List<string> iki, List<string> uc)
